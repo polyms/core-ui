@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { HTMLProps, forwardRef, useId, useLayoutEffect } from 'react'
 
 import { usePopoverContext } from './PopoverContext'
@@ -5,7 +6,7 @@ import { usePopoverContext } from './PopoverContext'
 export const PopoverHeading = forwardRef<
   HTMLHeadingElement,
   HTMLProps<HTMLHeadingElement>
->(function PopoverHeading(props, ref) {
+>(function PopoverHeading({ className, ...props }, ref) {
   const { setLabelId } = usePopoverContext()
   const id = useId()
 
@@ -17,7 +18,7 @@ export const PopoverHeading = forwardRef<
   }, [id, setLabelId])
 
   return (
-    <h2 {...props} ref={ref} id={id}>
+    <h2 {...props} className={classNames(className, 'popover-header')} ref={ref} id={id}>
       {props.children}
     </h2>
   )

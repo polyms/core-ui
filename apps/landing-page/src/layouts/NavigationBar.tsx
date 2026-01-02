@@ -45,7 +45,7 @@ export const NavigationBar = () => {
         <ListGroupLink href='/modals'>Modals</ListGroupLink>
       </ListGroup>
       <ListGroup>
-        <ListGroupLink href='/popovers'>Popovers</ListGroupLink>
+        <ListGroupLink href='/docs/popovers'>Popovers</ListGroupLink>
       </ListGroup>
       <ListGroup>
         <ListGroupLink href='/docs/tooltips'>Tooltips</ListGroupLink>

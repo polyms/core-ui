@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { PropsWithChildren } from 'react'
 
 import { PopoverOptions } from './Popover.types'
 import { PopoverContext } from './PopoverContext'
@@ -8,9 +8,7 @@ export function Popover({
   children,
   modal = false,
   ...restOptions
-}: {
-  children: ReactNode
-} & PopoverOptions) {
+}: PropsWithChildren<PopoverOptions>) {
   // This can accept any props as options, e.g. `placement`,
   // or other positioning options.
   const popover = usePopover({ modal, ...restOptions })

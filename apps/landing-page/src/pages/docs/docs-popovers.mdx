@@ -1,0 +1,78 @@
+---
+title: Popovers
+refUrl: https://getbootstrap.com/docs/5.3/components/popovers
+description: Documentation and examples for adding Bootstrap popovers, like those found in iOS, to any element on your site.
+---
+
+import { Popover } from '@polyms/core-ui'
+
+# Live demo
+
+<Popover>
+  <Popover.Trigger className='btn btn-lg btn-danger'
+    >Click to toggle popover</Popover.Trigger>
+  <Popover.Content>
+    <Popover.Heading>My popover heading</Popover.Heading>
+    <Popover.Description>My popover description</Popover.Description>
+    <Popover.Close>Close</Popover.Close>
+  </Popover.Content>
+</Popover>
+
+<p />
+
+```jsx
+<Tooltip title='Default tooltip'>
+  <a href='#'>inline links</a>
+</Tooltip>
+<Tooltip title='Default tooltip'>
+  <Button variant='primary'>Button</Button>
+</Tooltip>
+```
+
+# Four directions
+
+<div className='d-flex gap-3'>
+<div className='d-flex flex-column gap-3'>
+<Popover placement='top'>
+  <Popover.Trigger className='btn btn-primary'
+    >Popover on top</Popover.Trigger>
+  <Popover.Content>
+    <Popover.Heading>My popover heading</Popover.Heading>
+    <Popover.Description>My popover description</Popover.Description>
+    <Popover.Close>Close</Popover.Close>
+  </Popover.Content>
+</Popover>
+
+<Popover placement='bottom'>
+  <Popover.Trigger className='btn btn-primary'
+    >Popover on bottom</Popover.Trigger>
+  <Popover.Content>
+    <Popover.Heading>My popover heading</Popover.Heading>
+    <Popover.Description>My popover description</Popover.Description>
+    <Popover.Close>Close</Popover.Close>
+  </Popover.Content>
+</Popover>
+</div>
+
+<div className='d-flex gap-3 justify-content-evenly flex-fill'>
+<Popover placement='left'>
+  <Popover.Trigger className='btn btn-primary flex-fill'
+    >Popover on left</Popover.Trigger>
+  <Popover.Content>
+    <Popover.Heading>My popover heading</Popover.Heading>
+    <Popover.Description>My popover description</Popover.Description>
+    <Popover.Close>Close</Popover.Close>
+  </Popover.Content>
+</Popover>
+
+<Popover placement='right'>
+  <Popover.Trigger className='btn btn-primary flex-fill'
+    >Popover on right</Popover.Trigger>
+  <Popover.Content>
+    <Popover.Heading>My popover heading</Popover.Heading>
+    <Popover.Description>My popover description</Popover.Description>
+    <Popover.Close>Close</Popover.Close>
+  </Popover.Content>
+</Popover>
+</div>
+</div>

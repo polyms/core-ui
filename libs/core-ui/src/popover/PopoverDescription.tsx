@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import { HTMLProps, forwardRef, useId, useLayoutEffect } from 'react'
 
 import { usePopoverContext } from './PopoverContext'
@@ -5,7 +6,7 @@ import { usePopoverContext } from './PopoverContext'
 export const PopoverDescription = forwardRef<
   HTMLParagraphElement,
   HTMLProps<HTMLParagraphElement>
->(function PopoverDescription(props, ref) {
+>(function PopoverDescription({ className, ...props }, ref) {
   const { setDescriptionId } = usePopoverContext()
   const id = useId()
 
@@ -16,5 +17,7 @@ export const PopoverDescription = forwardRef<
     return () => setDescriptionId(undefined)
   }, [id, setDescriptionId])
 
-  return <p {...props} ref={ref} id={id} />
+  return (
+    <div {...props} className={classNames(className, 'popover-body')} ref={ref} id={id} />
+  )
 })
