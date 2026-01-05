@@ -1,24 +1,20 @@
 import { useRender } from '@base-ui/react/use-render'
 import clsx from 'clsx'
 import type { FC } from 'react'
-import { useFieldContext } from './FieldContext'
 
 // ── Types ─────────────────────────────────────────────────────────────────────────────
 
-export interface FieldLabelProps extends useRender.ComponentProps<'label'> {}
+export interface FieldDescriptionProps extends useRender.ComponentProps<'div'> {}
 
 // ── Components ──────────────────────────────────────────────────────────────────────────
 
-export const FieldLabel: FC<FieldLabelProps> = ({ className, render, ...props }) => {
-  const { id } = useFieldContext()
-
+export const FieldDescription: FC<FieldDescriptionProps> = ({ className, render, ...props }) => {
   const defaultProps = {
-    htmlFor: id,
-    className: clsx('field-label', className),
+    className: clsx('field-description', className),
   }
 
   return useRender({
-    defaultTagName: 'label',
+    defaultTagName: 'div',
     props: { ...defaultProps, ...props },
     render,
   })
