@@ -1,17 +1,22 @@
-import { Dialog } from '@base-ui/react/dialog'
+import { useRender } from '@base-ui/react/use-render'
 import clsx from 'clsx'
-import { forwardRef } from 'react'
 
 // ── Types ──────────────────────────────────────────────────────────────────────────────────────────────────
 
-type OffcanvasDescriptionProps = Dialog.Description.Props
+type OffcanvasBodyProps = useRender.ComponentProps<'div'>
 
 // ── Components ─────────────────────────────────────────────────────────────────────────────────────────────
 
-export const OffcanvasDescription = forwardRef<HTMLDivElement, OffcanvasDescriptionProps>(
-  ({ className, ...props }, ref) => (
-    <Dialog.Description className={clsx('offcanvas-description', className)} ref={ref} {...props} />
-  )
-)
+export function OffcanvasBody({ className, render, ...props }: OffcanvasBodyProps) {
+  const element = useRender({
+    defaultTagName: 'div',
+    ref: props.ref,
+    render,
+    props: {
+      ...props,
+      className: clsx('offcanvas-body', className),
+    },
+  })
 
-OffcanvasDescription.displayName = 'OffcanvasDescription'
+  return element
+}

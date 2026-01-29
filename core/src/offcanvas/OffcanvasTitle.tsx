@@ -4,14 +4,14 @@ import { forwardRef } from 'react'
 
 // ── Types ──────────────────────────────────────────────────────────────────────────────────────────────────
 
-type OffcanvasDescriptionProps = Dialog.Description.Props
+type OffcanvasTitleProps = Dialog.Title.Props
 
 // ── Components ─────────────────────────────────────────────────────────────────────────────────────────────
 
-export const OffcanvasDescription = forwardRef<HTMLDivElement, OffcanvasDescriptionProps>(
+export const OffcanvasTitle = forwardRef<HTMLHeadingElement, OffcanvasTitleProps>(
   ({ className, ...props }, ref) => (
-    <Dialog.Description className={clsx('offcanvas-description', className)} ref={ref} {...props} />
+    <Dialog.Title className={clsx('offcanvas-title', className)} ref={ref} {...props} />
   )
 )
 
-OffcanvasDescription.displayName = 'OffcanvasDescription'
+OffcanvasTitle.displayName = 'OffcanvasTitle'
